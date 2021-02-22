@@ -9,7 +9,7 @@ on:
 env:
       PROJECT_ID: ${{ secrets.PROJECT_ID }}
       RUN_REGION: us-central1
-      SERVICE_NAME: vaadin-test
+      SERVICE_NAME: vaadin
 
 
 jobs:
