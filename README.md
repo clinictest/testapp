@@ -1,9 +1,9 @@
 # Users Management
 Разработать систему управления пользователями.<br>
 
-*App* | *Cloud* | *CI/CD*
-:--- |:---|:---
-![](https://www.mrvoip.com/otherservice_img/21026042018122748.png)|![](https://seopulses.ru/wp-content/uploads/2020/05/1-3.jpg) |![](https://www.aegisiscblog.com/wp-content/uploads/2019/12/DevOps.jpg) 
+*App* | *Cloud* | *CI/CD* | *Vaadin
+:--- |:---|:--- |:---
+![](https://www.mrvoip.com/otherservice_img/21026042018122748.png)|![](https://seopulses.ru/wp-content/uploads/2020/05/1-3.jpg) |![](https://www.aegisiscblog.com/wp-content/uploads/2019/12/DevOps.jpg) | ![](https://d1qmdf3vop2l07.cloudfront.net/tan-pooch.cloudvent.net/hash-store/2d4aa3208e647aa14290ab2bbfe1efec.png)
 
 
 
@@ -44,10 +44,10 @@ Edit        |/user/{id}/edit  Редактирование пользовате�
 
 
 ### Стек технологий:
-1.  Java 8
-2.  Spring (Spring Boot, Spring MVC, Spring Data, Spring Security)
+1.  Java 14
+2.  Spring (Spring Boot, Spring Data, Spring Security)
 3.  Google Cloud PostgreSQL 12
-4.  Html Template Engine - Thymeleaf
+4.  Frontend - Vaadin 14
 5.  Maven
 6.  Docker 
 7.  CI/CD GitHub Action
