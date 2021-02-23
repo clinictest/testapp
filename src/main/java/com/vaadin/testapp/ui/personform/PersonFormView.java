@@ -22,7 +22,7 @@ import com.vaadin.testapp.service.SampleUserService;
 import com.vaadin.testapp.ui.main.MainView;
 
 @Route(value = "person-form", layout = MainView.class)
-@PageTitle("Person Form")
+@PageTitle("User Form")
 @CssImport("./views/personform/person-form-view.css")
 public class PersonFormView extends Div {
 

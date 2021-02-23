@@ -11,7 +11,7 @@ import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.testapp.ui.main.MainView;
 
 @Route(value = "hello", layout = MainView.class)
-@PageTitle("Hello World")
+@PageTitle("Start Page")
 @CssImport("./views/helloworld/hello-world-view.css")
 @RouteAlias(value = "", layout = MainView.class)
 public class HelloWorldView extends HorizontalLayout {
