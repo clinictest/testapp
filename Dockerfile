@@ -11,7 +11,7 @@ ENV HOST 0.0.0.0
 COPY pom.xml .
 COPY src src
 
-RUN mvn clean package -Pproduction
+RUN mvn clean package
 
 FROM openjdk:8-jdk-alpine
 
