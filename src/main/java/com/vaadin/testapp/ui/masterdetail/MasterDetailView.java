@@ -73,7 +73,7 @@ public class MasterDetailView extends Div {
                 .withProperty("important", User::isImportant);
         grid.addColumn(importantRenderer).setHeader("Important").setAutoWidth(true);
 
-//        grid.setDataProvider(new CrudServiceDataProvider<>(sampleUserService));
+        grid.setDataProvider(new CrudServiceDataProvider<>(sampleUserService));
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
         grid.setHeightFull();
 
