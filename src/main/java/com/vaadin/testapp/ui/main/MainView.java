@@ -15,6 +15,7 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
@@ -33,6 +34,7 @@ import java.util.Optional;
 @CssImport("./views/main/main-view.css")
 @PWA(name = "My app", shortName = "My app", enableInstallPrompt = false)
 @JsModule("./styles/shared-styles.js")
+@Route("/")
 @Theme(value = Lumo.class, variant = Lumo.DARK)
 public class MainView extends AppLayout {
 
