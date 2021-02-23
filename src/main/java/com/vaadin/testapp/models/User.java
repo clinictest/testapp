@@ -57,6 +57,15 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    private boolean important;
+    public boolean isImportant() {
+        return important;
+    }
+    public void setImportant(boolean important) {
+        this.important = important;
+    }
+
+
     @Override
     public String getUsername() {
         return username;
