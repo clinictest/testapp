@@ -12,8 +12,9 @@ COPY pom.xml .
 COPY src src
 
 RUN mvn clean package
+#-Pproduction
 
-FROM openjdk:8-jdk-alpine
+FROM adoptopenjdk/openjdk8:alpine-slim
 
 RUN apk add --no-cache curl tar bash
 
@@ -23,4 +24,4 @@ FROM adoptopenjdk/openjdk8:alpine-slim
 
 COPY --from=builder /build/target/testapp-0.0.1-SNAPSHOT.jar /app/app.jar
 
-CMD ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "-Dspring.profiles.active=prod", "/app/app.jar"]
