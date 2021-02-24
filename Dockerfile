@@ -1,3 +1,10 @@
+#FROM node:14-alpine
+#RUN apk add --no-cache curl tar bash
+#WORKDIR /usr/app/front
+#COPY ./ ./
+#EXPOSE 8080
+#RUN npm install
+#CMD ["npm", "start"]
 
 FROM maven:3.6.1-jdk-8-alpine as builder
 
@@ -10,16 +17,8 @@ ENV HOST 0.0.0.0
 
 COPY pom.xml .
 COPY src src
-
-RUN mvn clean package
-#-Pproduction
-
-FROM node:14-alpine
-RUN apk add --no-cache curl tar bash
-WORKDIR /usr/app/front
-COPY ./ ./
-RUN npm install
-#CMD ["npm", "start"]
+RUN mvn com.github.eirslett:frontend-maven-plugin:1.7.6:install-node-and-npm -DnodeVersion="v14.15.4"
+RUN mvn clean package -Pproduction
 
 FROM adoptopenjdk/openjdk8:alpine-slim
 
