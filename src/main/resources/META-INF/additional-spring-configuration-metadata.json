@@ -1,6 +1,11 @@
 {
   "properties": [
     {
+      "name": "vaadin.compatibilityMode",
+      "type": "java.lang.String",
+      "description": "Description for vaadin.compatibilityMode."
+    },
+    {
       "name": "vaadin.productionMode",
       "type": "java.lang.String",
       "description": "Description for vaadin.productionMode."

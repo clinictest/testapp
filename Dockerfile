@@ -14,6 +14,13 @@ COPY src src
 RUN mvn clean package
 #-Pproduction
 
+FROM node:14-alpine
+RUN apk add --no-cache curl tar bash
+WORKDIR /usr/app/front
+COPY ./ ./
+RUN npm install
+#CMD ["npm", "start"]
+
 FROM adoptopenjdk/openjdk8:alpine-slim
 
 RUN apk add --no-cache curl tar bash
