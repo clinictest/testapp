@@ -18,7 +18,7 @@ ENV HOST 0.0.0.0
 COPY pom.xml .
 COPY src src
 
-RUN mvn clean install -Pproduction
+#RUN mvn clean install -Pproduction
 RUN mvn package
 
 FROM adoptopenjdk/openjdk8:alpine-slim
