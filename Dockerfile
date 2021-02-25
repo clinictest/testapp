@@ -1,4 +1,3 @@
-
 FROM node:12
 WORKDIR /usr/src/app
 COPY package*.json ./
@@ -6,20 +5,15 @@ RUN npm install
 COPY . .
 EXPOSE 8080
 
-
 FROM maven:3.6.1-jdk-8-alpine as builder
-
 MAINTAINER Author AndreiKviatkouski <a.kviatkouski@softteco.com>
-
-
 WORKDIR /build
-
 ENV PORT 8080
 ENV HOST 0.0.0.0
 COPY pom.xml .
 COPY src src
 
-RUN mvn clean package
+RUN mvn clean package -Production
 
 FROM adoptopenjdk/openjdk8:alpine-slim
 
