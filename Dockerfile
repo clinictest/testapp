@@ -1,22 +1,11 @@
 
-#FROM alpine:3.10  as build-stage
-#ENV NODE_VERSION 14.16.0
-#RUN apk add --no-cache --virtual tar curl bash gnupg \
-#    && rm -rf /var/cache/apk/*
-#WORKDIR /app
-#COPY . .
-#RUN npm install
-#RUN npm run build
-#FROM node:12.18.1
-#
-#WORKDIR /app
-#
-#COPY package.json package.json
-#COPY package-lock.json package-lock.json
-#
-#RUN npm install
-#
-#COPY . .
+FROM node:12
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 8080
+
 
 FROM maven:3.6.1-jdk-8-alpine as builder
 
@@ -29,7 +18,8 @@ ENV HOST 0.0.0.0
 COPY pom.xml .
 COPY src src
 
-RUN mvn clean package
+RUN mvn clean install -Pproduction
+RUN mvn package
 
 FROM adoptopenjdk/openjdk8:alpine-slim
 
