@@ -9,5 +9,10 @@
       "name": "vaadin.productionMode",
       "type": "java.lang.String",
       "description": "Description for vaadin.productionMode."
+    },
+    {
+      "name": "vaadin.pnpm.enable",
+      "type": "java.lang.String",
+      "description": "Description for vaadin.pnpm.enable."
     }
   ] }
