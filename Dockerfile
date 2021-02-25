@@ -11,6 +11,7 @@ FROM maven:3.6.1-jdk-8-alpine as builder
 
 MAINTAINER Author AndreiKviatkouski <a.kviatkouski@softteco.com>
 
+
 WORKDIR /build
 
 ENV PORT 8080
