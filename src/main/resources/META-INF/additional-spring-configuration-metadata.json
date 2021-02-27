@@ -14,5 +14,10 @@
       "name": "vaadin.pnpm.enable",
       "type": "java.lang.String",
       "description": "Description for vaadin.pnpm.enable."
+    },
+    {
+      "name": "vaadin.require.home.node",
+      "type": "java.lang.String",
+      "description": "Description for vaadin.require.home.node."
     }
   ] }
