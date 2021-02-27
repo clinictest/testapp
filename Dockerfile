@@ -23,7 +23,7 @@
 
 FROM adoptopenjdk/openjdk11:alpine-jre
 WORKDIR /
-ADD target/testapp-0.0.1-SNAPSHOT.jar app.jar
+COPY target/testapp-0.0.1-SNAPSHOT.jar app.jar
 #RUN adduser -h myuser
 #USER myuser
 EXPOSE 8080
