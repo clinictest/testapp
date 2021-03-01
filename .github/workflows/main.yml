@@ -11,8 +11,8 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
   SERVICE_NAME: testapp
-  CPU: 2
-  MEMORY: 1Gi
+  CPU: 1
+  MEMORY: 512Mi
 
 
 jobs:
