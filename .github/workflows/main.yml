@@ -13,7 +13,7 @@ env:
   SERVICE_NAME: testapp
   CPU: 2
   MEMORY: 1Gi
-  SERVICE_ACCOUNT: github-action@$vaadin-test-305618.iam.gserviceaccount.com
+
 
 jobs:
   build:
@@ -77,4 +77,3 @@ jobs:
           --region $RUN_REGION \
           --memory=$MEMORY \
           --cpu=$CPU \
-          --service-account=SERVICE_ACCOUNT
