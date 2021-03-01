@@ -10,6 +10,7 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
   SERVICE_NAME: testapp
+
 jobs:
   build:
     strategy:
@@ -20,9 +21,6 @@ jobs:
         java: [11]
 
     runs-on: ${{ matrix.os }}
-    env:
-      DEPLOY_PATH: /
-
     steps:
       # Maven build
       - uses: actions/checkout@master
@@ -45,10 +43,7 @@ jobs:
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml', '**/package.json') }}
       - name: Build with Maven
 #        run: ./mvnw -C -B -e -V clean install -Pproduction
-        run: mvn -C -B -e -V clean install -Pproduction
-
-      - name: Checkout
-        uses: actions/checkout@master
+        run: mvn clean package -Pproduction
 
         # Setup gcloud CLI
       - name: Setup GCP Service Account

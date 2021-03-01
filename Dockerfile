@@ -24,8 +24,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 WORKDIR /
 EXPOSE 8080
-ADD /target/testapp-0.0.1-SNAPSHOT.jar app.jar
+COPY /target/testapp-0.0.1-SNAPSHOT.jar app.jar
 #RUN adduser -h myuser
 #USER myuser
 CMD ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
-#CMD java -jar -Dspring.profiles.active=prod app.jar
