@@ -53,11 +53,11 @@ jobs:
         run: mvn clean package -Pproduction -DskipTests
 
       # Creating new directory and copying jar to new folder how artifact for future using
-      - run: mkdir build && cp target/*.jar build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Package
-          path: build
+      - run: mkdir staging && cp target/*.jar staging
+     - uses: actions/upload-artifact@v2
+       with:
+        name: Package
+        path: staging
 
 
       # Setup gcloud CLI
