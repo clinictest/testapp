@@ -47,7 +47,6 @@ jobs:
 
         run: mvn clean package -Pproduction -DskipTests
 
-
         # Setup gcloud CLI
       - name: Setup GCP Service Account
         uses: google-github-actions/setup-gcloud@master
