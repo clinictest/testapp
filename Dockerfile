@@ -24,7 +24,7 @@
 
 
 FROM adoptopenjdk/openjdk11:alpine-jre
-COPY target/testapp-0.0.1-SNAPSHOT.jar app.jar
+COPY ~/.m2/repository/target/testapp-0.0.1-SNAPSHOT.jar app.jar
 #RUN adduser -h myuser
 #USER myuser
 CMD ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
