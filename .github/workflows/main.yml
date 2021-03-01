@@ -13,7 +13,6 @@ env:
   SERVICE_NAME: testapp
   CPU: 2
   MEMORY: 1Gi
-  PORT: 8080
   SERVICE_ACCOUNT: github-action@$PROJECT_ID.iam.gserviceaccount.com
 
 jobs:
@@ -51,7 +50,7 @@ jobs:
 
         # Setup gcloud CLI
       - name: Setup GCP Service Account
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
           version: 'latest'
           service_account_email: ${{ secrets.SA_EMAIL }}
@@ -79,5 +78,4 @@ jobs:
           --region $RUN_REGION \
           --memory=$MEMORY \
           --cpu=$CPU \
-          --port=PORT \
           --service-account=SERVICE_ACCOUNT
