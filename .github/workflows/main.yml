@@ -10,7 +10,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
-  SERVICE_NAME: vaadin-testapp
+  SERVICE_NAME: testapp
   CPU: 2
   MEMORY: 1Gi
   PORT: 8080
