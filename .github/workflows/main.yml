@@ -73,16 +73,15 @@ jobs:
         run: |
           gcloud config set project $PROJECT_ID
 
-      # Build Cloud Run project
+      # Build Cloud Run project with MAVEN PLUGIN JIP
       - name: GCP Build
         run: |
-          gcloud builds submit --tag gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
+          mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:dockerBuild
 
-
-      # Deploy image to Cloud Run with JIB
+      # Deploy image to Cloud Run
       - name: GCP Deploy
         run: |
-          mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:dockerBuild \
+          gcloud run deploy $SERVICE_NAME \
           --image gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA \
           --platform managed \
           --allow-unauthenticated \
