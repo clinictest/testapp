@@ -12,7 +12,7 @@ env:
   RUN_REGION: us-central1
   SERVICE_NAME: testapp
   CPU: 1
-  MEMORY: 512Mi
+  MEMORY: 256Mi
 
 
 jobs:
