@@ -1,4 +1,4 @@
-name: Gcloud CI/CD
+name: Gcloud CI/CD test
 
 on:
   push:
