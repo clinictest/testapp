@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 
+
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
