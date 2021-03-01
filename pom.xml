@@ -113,8 +113,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
 
@@ -124,14 +122,7 @@
             <dependencies>
             </dependencies>
             <build>
-
                 <plugins>
-                    <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version> 2.22.2</version>
-                    </plugin>
-
-
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>vaadin-maven-plugin</artifactId>

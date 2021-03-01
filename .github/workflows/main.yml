@@ -10,14 +10,18 @@ on:
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
-  SERVICE_NAME: testapp
+  SERVICE_NAME: vaadin-testapp
+  CPU: 2
+  MEMORY: 1Gi
+  PORT: 8080
+  SERVICE_ACCOUNT: github-action@$PROJECT_ID.iam.gserviceaccount.com
 
 jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        java: [11]
+        os: [ ubuntu-latest ]
+        java: [ 11 ]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -41,7 +45,8 @@ jobs:
             ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml', '**/package.json') }}
       - name: Build with Maven
-        run: mvn clean package -Pproduction
+
+        run: mvn clean package -Pproduction -DskipTests
 
 
         # Setup gcloud CLI
@@ -64,12 +69,15 @@ jobs:
 
 
       # Deploy image to Cloud Run
+
       - name: GCP Deploy
         run: |
           gcloud run deploy $SERVICE_NAME \
-          --region $RUN_REGION \
           --image gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA \
           --platform managed \
           --allow-unauthenticated \
-          --project $PROJECT_ID
-
+          --region $RUN_REGION \
+          --memory=$MEMORY \
+          --cpu=$CPU \
+          --port=PORT \
+          --service-account=SERVICE_ACCOUNT
