@@ -1,5 +1,10 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+
 #COPY ~/.m2/repository/target/testapp-0.0.1-SNAPSHOT.jar app.jar
-ARG JAR_FILE=target/*.jar
+
+
+
+#https://docs.github.com/en/actions/guides/building-and-testing-java-with-maven
+FROM adoptopenjdk/openjdk11:alpine-jre
+ARG JAR_FILE=build/*.jar
 COPY ${JAR_FILE} app.jar
 CMD ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
