@@ -131,23 +131,6 @@
                     <version> 2.22.2</version>
                     </plugin>
 
-                    <plugin>
-                        <artifactId>maven-clean-plugin</artifactId>
-                        <version>3.0.0</version>
-                        <configuration>
-                            <filesets>
-                                <fileset>
-                                    <directory>
-                                        ${basedir}/src/main/resources/VAADIN/
-                                    </directory>
-                                    <includes>
-                                        <include>widgetsets/**/*</include>
-                                    </includes>
-                                </fileset>
-                            </filesets>
-                        </configuration>
-                    </plugin>
-
 
                     <plugin>
                         <groupId>com.vaadin</groupId>
