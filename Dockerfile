@@ -22,6 +22,7 @@
 #CMD ["java", "-jar", "-Dspring.profiles.active=prod", "/app/app.jar"]
 
 
+
 FROM adoptopenjdk/openjdk11:alpine-jre
 COPY target/testapp-0.0.1-SNAPSHOT.jar app.jar
 #RUN adduser -h myuser
