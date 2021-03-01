@@ -51,12 +51,11 @@ jobs:
         run: mvn clean package -Pproduction -DskipTests
 
       # Packaging workflow data as artifacts
-#      - run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/*.jar staging
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Package
-          path: staging
+#      - run: mkdir staging && cp target/*.jar staging
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: Package
+#          path: staging
 
 
         # Setup gcloud CLI
