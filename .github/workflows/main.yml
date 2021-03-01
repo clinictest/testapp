@@ -13,7 +13,7 @@ env:
   SERVICE_NAME: testapp
   CPU: 2
   MEMORY: 1Gi
-  SERVICE_ACCOUNT: github-action@$PROJECT_ID.iam.gserviceaccount.com
+  SERVICE_ACCOUNT: github-action@$vaadin-test-305618.iam.gserviceaccount.com
 
 jobs:
   build:
@@ -45,7 +45,7 @@ jobs:
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml', '**/package.json') }}
       - name: Build with Maven
 
-        run: mvn clean package -Pproduction
+        run: mvn clean package -Pproduction -DskipTests
 
 
         # Setup gcloud CLI
