@@ -55,6 +55,7 @@ jobs:
           service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
 
+
       # Docker build
       - name: Docker Build
         run: |
