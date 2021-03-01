@@ -21,6 +21,7 @@
 #
 #CMD ["java", "-jar", "-Dspring.profiles.active=prod", "/app/app.jar"]
 
+
 FROM adoptopenjdk/openjdk11:alpine-jre
 WORKDIR /
 EXPOSE 8080
