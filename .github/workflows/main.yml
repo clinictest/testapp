@@ -16,9 +16,7 @@ jobs:
   build:
     strategy:
       matrix:
-#        os: [ubuntu-latest, windows-latest, macos-latest]
         os: [ubuntu-latest]
-#        java: [1.8, 11, 15]
         java: [11]
 
     runs-on: ${{ matrix.os }}
@@ -43,24 +41,16 @@ jobs:
             ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml', '**/package.json') }}
       - name: Build with Maven
-#        run: ./mvnw -C -B -e -V clean install -Pproduction
         run: mvn clean package -Pproduction
 
 
         # Setup gcloud CLI
       - name: Setup GCP Service Account
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
           version: 'latest'
           service_account_email: ${{ secrets.SA_EMAIL }}
           service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-
-
-
-#      # Docker build
-#      - name: Docker Build
-#        run: |
-#          docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA .
 
       # Configure gcloud CLI
       - name: gcloud Set up

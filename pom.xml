@@ -145,23 +145,8 @@
                                     <goal>build-frontend</goal>
                                 </goals>
                                 <configuration>
-<!--                                    <nodeDownloadRoot>https://nodejs.org/dist/node-v14.15.4-linux-x64.tar.xz</nodeDownloadRoot>-->
-<!--                                    <requireHomeNodeExec>true</requireHomeNodeExec>-->
-<!--                                    <npmFolder>/npm</npmFolder>-->
-<!--                                    <frontendDirectory>/builder/frontend</frontendDirectory>-->
-<!--                                    <generatedFolder>builder/frontend/</generatedFolder>-->
-<!--                                    <frontendResourcesDirectory></frontendResourcesDirectory>-->
-<!--                                    <project>testapp</project>-->
-<!--                                    <bowerMode></bowerMode>-->
-<!--                                    <generateBundle></generateBundle>-->
-<!--                                    <optimizeBundle></optimizeBundle>-->
-<!--                                    <webpackGeneratedTemplate></webpackGeneratedTemplate>-->
-<!--                                    <webpackOutputDirectory></webpackOutputDirectory>-->
-<!--                                    <webpackTemplate></webpackTemplate>-->
                                     <nodeVersion>v14.16.0</nodeVersion>
-<!--                                    <webpackTemplate></webpackTemplate>-->
-<!--                                    <webpackOutputDirectory></webpackOutputDirectory>-->
-                                    <pnpmEnable>false</pnpmEnable>
+                                    <pnpmEnable>true</pnpmEnable>
                                     <productionMode>true</productionMode>
                                     <runNpmInstall>true</runNpmInstall>
                                 </configuration>
