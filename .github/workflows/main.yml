@@ -68,7 +68,7 @@ jobs:
         with:
           version: 'latest'
           service_account_email: $SA_EMAIL
-          service_account_key: $secrets.GOOGLE_APPLICATION_CREDENTIALS
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
       # Configure gcloud CLI
       - name: gcloud Set up
@@ -78,7 +78,7 @@ jobs:
       #Authentication gcloud CLI
       - name: Authentication GC Service account
         run: |
-          gcloud auth activate-service-account $secrets.SA_EMAIL \
+          gcloud auth activate-service-account $SA_EMAIL \
           --key-file=$GOOGLE_APPLICATION_CREDENTIALS \
 
 
