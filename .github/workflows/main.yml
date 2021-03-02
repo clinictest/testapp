@@ -80,7 +80,7 @@ jobs:
         run: |
           gcloud auth activate-service-account $secrets.SA_EMAIL \
           --key-file $GOOGLE_APPLICATION_CREDENTIALS \
-          --project $PROJECT_ID
+
 
       # Building GC Java containers with Jib
       - name: GCP Build
