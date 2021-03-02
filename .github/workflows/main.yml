@@ -80,12 +80,13 @@ jobs:
 #        run: |
 #          gcloud auth activate-service-account $SA_EMAIL --key-file=$GOOGLE_APPLICATION_CREDENTIALS
 
-
+  mvn compile jib:build -Djib.to.auth.username=user -Djib.to.auth.password=pass
       # Building GC Java containers with Jib
       - name: GCP Build
         run: |
-          mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:build \
-                -Dimage=gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
+          mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:dockerBuild
+#          mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:build \
+#                -Dimage=gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
 
       # Deploy image to Cloud Run
       - name: GCP Deploy
