@@ -75,10 +75,10 @@ jobs:
         run: |
           gcloud config set project $PROJECT_ID
 
-      #Authentication GC
+      #Authentication gcloud CLI
       - name: Authentication GC Service account
         run: |
-        gcloud auth activate-service-account $secrets.SA_EMAIL \
+          gcloud auth activate-service-account $secrets.SA_EMAIL \
           --key-file=$GOOGLE_APPLICATION_CREDENTIALS \
           --project=$PROJECT_ID
 
