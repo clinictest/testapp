@@ -75,12 +75,13 @@ jobs:
         run: |
           gcloud config set project $PROJECT_ID
 
+
 #      #Authentication gcloud CLI
 #      - name: Authentication GC Service account
 #        run: |
 #          gcloud auth activate-service-account $SA_EMAIL --key-file=$GOOGLE_APPLICATION_CREDENTIALS
 
-#  mvn compile jib:build -Djib.to.auth.username=user -Djib.to.auth.password=pass
+
       # Building GC Java containers with Jib
       - name: GCP Build
         run: |
