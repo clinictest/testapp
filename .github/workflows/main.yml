@@ -76,8 +76,9 @@ jobs:
       #Authentication GC
       - name: Authentication GC Service account
         run: |
-          gcloud auth activate-service-account vaadin-github@vaadin-test-305618.iam.gserviceaccount.com \
-          --key-file=C:\Users\237Lenovo\Downloads\vaadin.json --project=vaadin-test-305618
+          gcloud auth activate-service-account ${{ secrets.SA_EMAIL }} \
+          --key-file=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}} \
+          --project=${{ secrets.PROJECT_ID }}
 
       # Building GC Java containers with Jib
       - name: GCP Build
