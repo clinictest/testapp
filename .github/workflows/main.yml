@@ -78,8 +78,7 @@ jobs:
       #Authentication gcloud CLI
       - name: Authentication GC Service account
         run: |
-          gcloud auth activate-service-account $SA_EMAIL \
-          --key-file=$GOOGLE_APPLICATION_CREDENTIALS \
+          gcloud auth activate-service-account $SA_EMAIL --key-file=$GOOGLE_APPLICATION_CREDENTIALS
 
 
       # Building GC Java containers with Jib
