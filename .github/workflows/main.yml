@@ -73,10 +73,16 @@ jobs:
         run: |
           gcloud config set project $PROJECT_ID
 
+      #Authentication GC
+      - name: Authentication GC Service account
+        run: |
+          gcloud auth activate-service-account vaadin-github@vaadin-test-305618.iam.gserviceaccount.com \
+          --key-file=C:\Users\237Lenovo\Downloads\vaadin.json --project=vaadin-test-305618
+
       # Building GC Java containers with Jib
       - name: GCP Build
         run: |
-          mvn compile com.google.cloud.tools:jib-maven-plugin:2.0.0:build \
+          mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:build \
                 -Dimage=gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
 
       # Deploy image to Cloud Run
