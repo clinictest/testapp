@@ -13,6 +13,8 @@ env:
   SERVICE_NAME: testapp
   CPU: 1
   MEMORY: 256Mi
+  SA_EMAIL: ${{ secrets.SA_EMAIL }}
+  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
 
 
 jobs:
@@ -65,8 +67,8 @@ jobs:
         uses: google-github-actions/setup-gcloud@master
         with:
           version: 'latest'
-          service_account_email: ${{ secrets.SA_EMAIL }}
-          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+          service_account_email: $SA_EMAIL
+          service_account_key: $GOOGLE_APPLICATION_CREDENTIALS
 
       # Configure gcloud CLI
       - name: gcloud Set up
@@ -76,9 +78,9 @@ jobs:
       #Authentication GC
       - name: Authentication GC Service account
         run: |
-          gcloud auth activate-service-account ${{ secrets.SA_EMAIL }} \
-          --key-file=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}} \
-          --project=${{ secrets.PROJECT_ID }}
+        gcloud auth activate-service-account $secrets.SA_EMAIL \
+          --key-file=$GOOGLE_APPLICATION_CREDENTIALS \
+          --project=$PROJECT_ID
 
       # Building GC Java containers with Jib
       - name: GCP Build
